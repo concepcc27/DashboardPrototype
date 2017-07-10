@@ -3,17 +3,30 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+	state = {
+		projects: []
+	};
+
+	componentDidMount () {
+	  const dataAPI = 'https://jsonplaceholder.typicode.com';
+	  axios.get(dataAPI + '/posts')
+	    .then((response) => {
+	      this.setState({
+	        projects: response.data.slice(0, 12)
+	      });
+				console.log(error);
+	    })
+	    .catch( (error) => {
+	      console.log(response.data);
+	    }
+	  );
+	}
+
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+			<div className="wrapper">
+				<h1>Hello</h1>
+			</div>
     );
   }
 }
