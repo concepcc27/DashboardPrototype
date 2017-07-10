@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import {Display} from './components/Display';
 import './App.css';
 import axios from 'axios';
 
@@ -15,10 +16,10 @@ class App extends Component {
 	      this.setState({
 	        projects: response.data.slice(0, 12)
 	      });
-				console.log(error);
+				console.log(response.data);
 	    })
 	    .catch( (error) => {
-	      console.log(response.data);
+        console.log(error);
 	    }
 	  );
 	}
@@ -26,7 +27,7 @@ class App extends Component {
   render() {
     return (
 			<div className="wrapper">
-				<h1>Hello</h1>
+        <Display elements={this.state.projects}/>
 			</div>
     );
   }
