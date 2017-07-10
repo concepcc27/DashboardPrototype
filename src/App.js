@@ -4,9 +4,9 @@ import './App.css';
 import axios from 'axios';
 
 class App extends Component {
-  state = {
-    projects: []
-  };
+	state = {
+		projects: []
+	};
 
   componentDidMount() {
    const dataAPI = 'http://localhost:3000';
@@ -25,9 +25,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="wrapper">
-      <h1>Hello</h1>
-      </div>
+			<div className="wrapper">
+				<h1>Hello</h1>
+			</div>
     );
   }
 }
