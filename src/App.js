@@ -9,11 +9,11 @@ class App extends Component {
   };
 
   componentDidMount() {
-   const dataAPI = 'https://jsonplaceholder.typicode.com';
-   axios.get(dataAPI + '/posts')
+   const dataAPI = 'http://localhost:3000';
+   axios.get(dataAPI + '/changeContrib')
      .then((response) => {
        this.setState({
-         projects: response.data.slice(0, 12)
+         projects: response.data
        });
       console.log(this.state.projects);
      })

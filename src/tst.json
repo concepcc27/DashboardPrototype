@@ -1,0 +1,38 @@
+{
+  "changeContrib": {
+    "PreGANum": 2693,
+    "PostGANum": 1870,
+  },
+  "futureFITCal": {
+    "PreGANum": 2693,
+    "PostGANum": 1870,
+  },
+  "Visitors": {
+    "PreGANum": 2693,
+    "PostGANum": 2693,
+  },
+  "PageViews": {
+      "PreGANum": 2693,
+      "PostGANum": 2693,
+  },
+  "Devices": [
+      {"Large":
+        {
+          "PreGANum": 2693,
+          "PostGANum": 2693,
+        }
+      },
+      {"Medium":
+        {
+          "PreGANum": 2693,
+          "PostGANum": 2693,
+        }
+      },
+      {"Small":
+        {
+          "PreGANum": 2693,
+          "PostGANum": 2693,
+        }
+      }
+  ]
+}
