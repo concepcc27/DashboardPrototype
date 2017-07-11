@@ -9,7 +9,8 @@ import DynamicDoughnutExample from './Components/dynamic-doughnut';
 class App extends Component {
 	state = {
 		projects: []
-	};
+	}
+
 
   componentDidMount() {
    const dataAPI = 'http://localhost:3000';
@@ -25,6 +26,8 @@ class App extends Component {
      }
    );
   }
+
+
 
   render() {
     return (
