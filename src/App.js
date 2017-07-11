@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
+import {ChartDisplay} from './Components/ChartDisplay';
+import DynamicDoughnutExample from './Components/dynamic-doughnut';
 
 class App extends Component {
 	state = {
@@ -10,12 +13,12 @@ class App extends Component {
 
   componentDidMount() {
    const dataAPI = 'http://localhost:3000';
-   axios.get(dataAPI + '/changeContrib')
+   axios.get(dataAPI + '/test')
      .then((response) => {
        this.setState({
          projects: response.data
        });
-      console.log(this.state.projects);
+       console.log(response);
      })
      .catch( (error) => {
        console.log(error);
@@ -26,7 +29,9 @@ class App extends Component {
   render() {
     return (
 			<div className="wrapper">
-				<h1>Hello</h1>
+        <ChartDisplay list={this.state.projects} />
+				<hr />
+        <DynamicDoughnutExample list={this.state.projects} />
 			</div>
     );
   }

@@ -1,0 +1,54 @@
+{
+  "users":
+  [
+    {
+      "label": "jan",
+      "uniqueVisits": 150000,
+    },
+    {
+      "label": "feb",
+      "uniqueVisits": 150000,
+    },
+    {
+      "label": "mar",
+      "uniqueVisits": 150000,
+    },
+    {
+      "label": "apr",
+      "uniqueVisits": 150000,
+    },
+    {
+      "label": "may",
+      "uniqueVisits": 150000,
+    },
+    {
+      "label": "jun",
+      "uniqueVisits": 150000,
+    },
+    {
+      "label": "jul",
+      "uniqueVisits": 150000,
+    },
+    {
+      "label": "aug",
+      "uniqueVisits": 150000,
+    },
+    {
+      "label": "sep",
+      "uniqueVisits": 150000,
+    },
+    {
+      "label": "oct",
+      "uniqueVisits": 150000,
+    },
+    {
+      "label": "nov",
+      "uniqueVisits": 150000,
+    },
+    {
+      "label": "dec",
+      "uniqueVisits": 150000,
+    },
+
+  ]
+}
