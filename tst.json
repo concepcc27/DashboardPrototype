@@ -1,41 +1,54 @@
 {
-  "test" :
-  {
-    "changeContrib": {
+  "test":
+  [
+    {
+      "id": "changeContrib",
+
       "PreGANum": 2693,
-      "PostGANum": 1870
+      "PostGANum": 4322
+
     },
-    "futureFITCal": {
-      "PreGANum": 2693,
-      "PostGANum": 1870
+    {
+      "id": "futureFITCal",
+
+      "PreGANum": 4324,
+      "PostGANum": 5436
+
     },
-    "Visitors": {
-      "PreGANum": 2693,
-      "PostGANum": 2693
+    {
+      "id": "Visitors",
+
+        "PreGANum": 1235,
+        "PostGANum": 6546
+
     },
-    "PageViews": {
-        "PreGANum": 2693,
-        "PostGANum": 2693
+    {
+      "id": "PageViews",
+
+          "PreGANum": 9840,
+          "PostGANum": 4329
+
     },
-    "Devices": [
-        {"Large":
-          {
-            "PreGANum": 2693,
-            "PostGANum": 2693
-          }
-        },
-        {"Medium":
-          {
-            "PreGANum": 2693,
-            "PostGANum": 2693
-          }
-        },
-        {"Small":
-          {
-            "PreGANum": 2693,
-            "PostGANum": 2693
-          }
-        }
-    ]
-  }
+    {
+      "id": "LargeDevice",
+
+          "PreGANum": 3242,
+          "PostGANum": 5435
+
+    },
+    {
+      "id": "MediumDevice",
+
+          "PreGANum": 5434,
+          "PostGANum": 2334
+
+    },
+    {
+      "id": "SmallDevice",
+
+          "PreGANum": 5433,
+          "PostGANum": 3455
+
+    }
+  ]
 }
