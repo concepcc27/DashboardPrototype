@@ -36,31 +36,50 @@ const initialChartConfig = {
 class DynamicDoughnutExample extends Component{
 
   state = {
-    data: []
+    data: [],
+    firstChannel: true,
   }
 
   getInitialChartConfig() {
-    const dataAPI = 'http://localhost:3000';
-    axios.get(dataAPI + '/test')
-      .then((response) => {
-        initialChartConfig.datasets[0].data = response.data.map( ({PreGANum}) => PreGANum);
-        this.setState({ data:initialChartConfig.datasets[0].data })
-      })
-      .catch( (error) => {
-        console.log(error);
-      }
-    );
+    if(this.state.firstChannel){
+      const dataAPI = 'http://localhost:3000';
+      axios.get(dataAPI + '/test')
+        .then((response) => {
+          initialChartConfig.datasets[0].data = response.data.map( ({PreGANum}) => PreGANum);
+          this.setState({ data: initialChartConfig.datasets[0].data })
+        })
+        .catch( (error) => {
+          console.log(error);
+        }
+      );
+    }
+    else{
+      const dataAPI = 'http://localhost:3001';
+      axios.get(dataAPI + '/annually')
+        .then((response) => {
+          initialChartConfig.datasets[0].data = response.data.map( ({totalVisits}) => totalVisits);
+          this.setState({ data: initialChartConfig.datasets[0].data })
+        })
+        .catch( (error) => {
+          console.log(error);
+        }
+      );
+    }
   }
 
 	componentDidMount() {
     this.getInitialChartConfig();
-    this.APIInterval = setInterval(() => {
+    this.APIInterval = setInterval( () => {
 			this.getInitialChartConfig();
-		}, 5000);
+      this.setState((prevState, props) => {
+        return {firstChannel: !prevState.firstChannel};
+      });
+		}, 1000);
 	}
 
   componentWillUnmount() {
     clearInterval(this.APIInterval);
+    console.log("error doughnut");
   }
 
   render() {

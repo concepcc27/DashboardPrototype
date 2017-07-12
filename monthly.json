@@ -1,0 +1,44 @@
+{
+  "monthly": [
+    {
+      "label": "1",
+      "totalVisits": 2480,
+      "uniqueVisits": 1759,
+      "returnVisits": 721,
+      "signUps": 398,
+      "signIns": 264,
+      "contributionChange": 50,
+      "allocationChange": 36
+    },
+    {
+      "label": "2",
+      "totalVisits": 2473,
+      "uniqueVisits": 1587,
+      "returnVisits": 886,
+      "signUps": 376,
+      "signIns": 286,
+      "contributionChange": 46,
+      "allocationChange": 34
+    },
+    {
+      "label": "3",
+      "totalVisits": 2563,
+      "uniqueVisits": 1489,
+      "returnVisits": 1074,
+      "signUps": 378,
+      "signIns": 284,
+      "contributionChange": 45,
+      "allocationChange": 28
+    },
+    {
+      "label": "4",
+      "totalVisits": 2570,
+      "uniqueVisits": 1528,
+      "returnVisits": 1042,
+      "signUps": 287,
+      "signIns": 236,
+      "contributionChange": 49,
+      "allocationChange": 31
+    }
+  ]
+}

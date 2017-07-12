@@ -1,40 +1,44 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import logo from './logo.svg';
 import './App.css';
-import axios from 'axios';
-import {ChartDisplay} from './Components/ChartDisplay';
+import ChartDisplay from './Components/ChartDisplay';
 import DynamicDoughnutExample from './Components/dynamic-doughnut';
 
 class App extends Component {
 	state = {
-		projects: []
+    doughnut: true
 	}
 
-
-  componentDidMount() {
-   const dataAPI = 'http://localhost:3000';
-   axios.get(dataAPI + '/test')
-     .then((response) => {
-       this.setState({
-         projects: response.data
-       });
-       console.log(response);
-     })
-     .catch( (error) => {
-       console.log(error);
-     }
-   );
+  display(){
+    if(this.state.doughnut){
+      return <DynamicDoughnutExample />;
+    }else{
+			console.log("display Chart");
+      return <ChartDisplay />;
+    }
   }
 
+	componentDidMount() {
+		this.toggleInterval = setInterval(() => {
+ 		 {this.toggle()}
+ 	 	}, 5000)
+  }
 
+  toggle(){
+		this.setState((prevState) => {
+			return {doughnut: !prevState.doughnut};
+		});
+  }
+
+	componentWillUnmount() {
+		clearInterval(this.toggleInterval);
+	}
 
   render() {
     return (
 			<div className="wrapper">
-        <ChartDisplay list={this.state.projects} />
-				<hr />
-        <DynamicDoughnutExample list={this.state.projects} />
+        {this.display()}
+
 			</div>
     );
   }
