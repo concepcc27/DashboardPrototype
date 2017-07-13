@@ -71,9 +71,9 @@ class DynamicDoughnutExample extends Component{
     this.getInitialChartConfig();
     this.APIInterval = setInterval( () => {
 			this.getInitialChartConfig();
-      this.setState((prevState, props) => {
-        return {firstChannel: !prevState.firstChannel};
-      });
+      this.setState((prevState) => ({
+        firstChannel: !prevState.firstChannel
+      }));
 		}, 1000);
 	}
 

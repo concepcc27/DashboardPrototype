@@ -6,7 +6,8 @@ import DynamicDoughnutExample from './Components/dynamic-doughnut';
 
 class App extends Component {
 	state = {
-    doughnut: true
+    doughnut: true,
+		pauseAnimation: false,
 	}
 
   display(){
@@ -20,15 +21,31 @@ class App extends Component {
 
 	componentDidMount() {
 		this.toggleInterval = setInterval(() => {
- 		 {this.toggle()}
- 	 	}, 5000)
+ 		 {this.toggleChart()}
+	 	}, 5000);
   }
 
-  toggle(){
-		this.setState((prevState) => {
-			return {doughnut: !prevState.doughnut};
-		});
+  toggleChart(){
+		this.setState((prevState) => ({
+			doughnut: !prevState.doughnut
+		}));
   }
+
+	toggleAnimation = () => {
+		this.setState( (prevState) => ({
+			pauseAnimation: !prevState.pauseAnimation
+	 	}));
+
+		console.log("Pause Animation: " + this.state.pauseAnimation);
+
+		if(this.state.pauseAnimation){
+			clearInterval(this.toggleInterval);
+		}else{
+			setInterval( () => {
+					{this.toggleChart()}
+				}, 5000);
+		}
+	}
 
 	componentWillUnmount() {
 		clearInterval(this.toggleInterval);
@@ -38,10 +55,19 @@ class App extends Component {
     return (
 			<div className="wrapper">
         {this.display()}
-
+				<br></br>
+				<button onClick={this.toggleAnimation}>
+					{this.state.pauseAnimation ? "Resume Animation" : "Pause Animation" }
+				</button>
 			</div>
     );
   }
 }
 
 export default App;
+
+
+// this.setTimeout(
+// 	() => { console.log('I do not leak!'); },
+// 	5000
+// );

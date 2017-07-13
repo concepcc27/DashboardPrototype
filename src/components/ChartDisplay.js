@@ -37,12 +37,12 @@ class ChartDisplay extends Component{
   }
 
   componentDidMount() {
-   const dataAPI = 'http://localhost:3000';
-   axios.get(dataAPI + '/test')
+   const dataAPI = 'http://localhost:3001';
+   axios.get(dataAPI + '/annually')
      .then((response) => {
-       chartConfig.labels = response.data.map(({id}) => id);
-       chartConfig.datasets[0].data = response.data.map(({PreGANum}) => PreGANum);
-       chartConfig.datasets[1].data = response.data.map(({PostGANum}) => PostGANum);
+       chartConfig.labels = response.data.map(({label}) => label);
+       chartConfig.datasets[0].data = response.data.map(({uniqueVisits}) => uniqueVisits);
+       chartConfig.datasets[1].data = response.data.map(({totalVisits}) => totalVisits);
        this.setState({ data: chartConfig });
      })
      .catch( (error) => {
