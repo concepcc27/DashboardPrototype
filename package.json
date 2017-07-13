@@ -2,6 +2,7 @@
   "name": "dashboard",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "./",
   "dependencies": {
     "chart.js": "^2.6.0",
     "flickity": "^2.0.9",
