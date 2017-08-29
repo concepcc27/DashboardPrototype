@@ -1,4 +1,4 @@
-[Demo] (https://github.aig.net/pages/kinguyen/VALICDashBoard/build/).
+[Demo] (https://concepcc27.github.io/DashboardPrototype).
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
